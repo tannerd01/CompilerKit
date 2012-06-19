@@ -69,6 +69,7 @@ compilerkit_empty_set_init (CompilerKitEmptySet *self)
  */
 static GObject *compilerkit_empty_set_new (void)
 {
+	printf("creating new gobject for empty set\n");
 	return g_object_new (COMPILERKIT_TYPE_EMPTY_SET, NULL);
 }
 
@@ -83,11 +84,13 @@ static GObject *compilerkit_empty_set_new (void)
  */
 GObject *compilerkit_empty_set_get_instance (void)
 {
+	printf("running gobject for empty set\n");
 	if(empty_set_instance == NULL)
 	{
+		printf("is null\n");
 		empty_set_instance = compilerkit_empty_set_new();
 	}
-	
+	printf("got past the null fix\n");
 	return COMPILERKIT_EMPTY_SET(empty_set_instance);
 }
 
